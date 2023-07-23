@@ -1,0 +1,186 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #131313; /* Dark background for a colorful theme */
+    color: #fff; /* White text color */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #FF6D00; /* Orange header background */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 109, 0, 0.8); /* Glowing effect on header */
+}
+
+h1 {
+    text-align: center;
+    color: #FFD600; /* Yellow title color for a colorful theme */
+    text-shadow: 0 0 10px rgba(255, 214, 0, 0.8); /* Glowing effect on title */
+}
+
+section.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center align content */
+    margin: 30px auto;
+    max-width: 800px; /* Increased max-width to center content properly */
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #FFD600; /* Yellow border */
+    border-radius: 5px;
+    background-color: #212121; /* Dark background for input */
+    color: #fff; /* White text color */
+    width: 100%;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #FF6D00; /* Orange button background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #FF8F00; /* Slightly lighter orange on hover */
+    box-shadow: 0 0 10px rgba(255, 109, 0, 0.8); /* Glowing effect on button */
+}
+
+footer {
+    background-color: #212121; /* Dark footer background */
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    color: #fff; /* White footer text color */
+    margin: 0;
+    padding: 5px;
+}
+
+/* Styles for view-data.html template */
+table {
+    border-collapse: separate; /* Add separate border-collapse for spacing */
+    border-spacing: 50;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px; /* Added margin-bottom to center the table vertically */
+    background-color: #111; /* Dark gray table background */
+    color: #fff; /* White text color */
+    animation: tableMovement 10s linear infinite; /* Animation for moving table */
+    border-radius: 10px; /* Add curves to the table */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Adding a subtle box shadow to the table */
+}
+
+@keyframes tableMovement {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+table, th, td {
+    border: 1px solid #FFD600; /* Yellow border */
+    padding: 12px; /* Enlarge the table cells */
+}
+
+th {
+    background-color: #333; /* Dark gray header background */
+    font-weight: bold;
+    color: #fff; /* White text color */
+}
+
+tr:nth-child(even) {
+    background-color: #222; /* Slightly darker background for even rows */
+}
+
+/* Hover effect for images */
+img:hover {
+    transform: scale(1.1); /* Increase the size of the image on hover */
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.8); /* Orange shadow on hover */
+}
+
+/* Additional feature for the table */
+td {
+    text-align: center; /* Center-align the table data cells */
+}
+
+/* Adding a hover effect to table rows */
+tr:hover {
+    background-color: #444; /* Darker background color on hover */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+/* Additional styles for a professional look */
+header {
+    background-color: #FF6D00; /* Orange header background */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 109, 0, 0.8); /* Glowing effect on header */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333; /* Dark navigation background */
+    padding: 10px;
+}
+
+nav a {
+    color: #fff; /* White link text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #FF6D00; /* Orange link background on hover */
+    box-shadow: 0 0 10px rgba(255, 109, 0, 0.8); /* Glowing effect on navigation links */
+}
+
+footer {
+    background-color: #212121; /* Dark footer background */
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    color: #fff; /* White footer text color */
+    margin: 0;
+    padding: 5px;
+}
+
+/* Hover effect for pie chart images */
+section.data-section img:hover {
+    transform: scale(1.5); /* Slightly increase the size of the image on hover */
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.8); /* Orange shadow on hover */
+}
+
+/* Hover effect for bar plot image */
+section.data-section img.bar-plot:hover {
+    transform: scale(1.15); /* Slightly increase the size of the image on hover */
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.8); /* Orange shadow on hover */
+}
