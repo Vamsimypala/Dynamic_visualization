@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Time Predictor</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 20px; /* Increase the base font size */
+        }
+        
+        h1 {
+            color: #1aff00;
+            font-size: 36px; /* Increase the heading font size */
+            margin-bottom: 20px; /* Increase the margin for the heading */
+        }
+        
+        div {
+            margin-bottom: 15px; /* Increase the margin for all div elements */
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px; /* Increase the margin for labels */
+            font-size: 20px; /* Increase the font size for labels */
+        }
+        
+        input {
+            width: 300px; /* Increase the width of input boxes */
+            padding: 15px; /* Increase the padding inside input boxes */
+            font-size: 20px; /* Increase the font size inside input boxes */
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #1aff00;
+            border-radius: 10px; /* Increase the border radius */
+        }
+        
+        button {
+            background-color: #1aff00;
+            color: #000;
+            padding: 20px 40px; /* Increase the padding inside buttons */
+            border: none;
+            border-radius: 10px; /* Increase the border radius */
+            cursor: pointer;
+            font-size: 20px; /* Increase the font size inside buttons */
+        }
+        
+        button:hover {
+            background-color: #33ff00;
+        }
+        
+        #result {
+            font-size: 24px; /* Increase the font size for the result text */
+            margin-top: 20px; /* Increase the margin for the result text */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Cooking Time Predictor</h1>
+    <div>
+        <label for="complexity">Recipe Complexity:</label>
+        <input type="number" id="complexity">
+    </div>
+    <div>
+        <label for="ingredients">Number of Ingredients:</label>
+        <input type="number" id="ingredients">
+    </div>
+    <div>
+        <label for="experience">Chef's Experience (in years):</label>
+        <input type="number" id="experience">
+    </div>
+    <button onclick="predictCookingTime()">Predict Cooking Time("In minutes")</button>
+    <div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function predictCookingTime() {
+            var complexity = document.getElementById("complexity").value;
+            var ingredients = document.getElementById("ingredients").value;
+            var experience = document.getElementById("experience").value;
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    recipe_complexity: complexity,
+                    ingredients: ingredients,
+                    chef_experience: experience
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerText = "Predicted Cooking Time: " + data.predicted_cooking_time;
+            });
+        }
+    </script>
+</body>
+</html>

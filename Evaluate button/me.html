@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* ... (your existing styles) ... */
+        
+        .profile-photo {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            
+            margin-top: 20PX;
+            margin-left: 20px;
+        }
+        
+        .profile-photo img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius:50%;
+        }
+    </style>
+    <title>Profile Photo with Progress</title>
+    
+</head>
+<body>
+    <div class="profile-photo">
+        <canvas class="progress-ring" width="150" height="150"></canvas>
+        <img src="" alt="Profile Image">
+    </div>
+    
+        // Your existing JavaScript code...
+   <script>
+            const canvas = document.querySelector(".progress-ring");
+            const ctx = canvas.getContext("2d");
+            const radius = canvas.width / 2;
+            
+            const progress = 0.7; // 70% progress
+        
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const startAngle = -Math.PI / 2; // Start from top
+            const endAngle = startAngle + 4 * Math.PI * progress;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = "#3498db"; // Progress color
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.stroke();
+        
+            ctx.strokeStyle = "transparent";
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.stroke();
+        </script>
+        
+    </script>
+</body>
+</html>
